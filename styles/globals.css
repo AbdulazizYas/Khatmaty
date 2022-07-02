@@ -3,11 +3,16 @@
 :root{
   --primaryColor: #846c45;
   --secondaryColor: hsl(37, 31%, 60%);
+  --accentColor: hsl(37, 31%, 80%);
+  --shadow: 0 6px 8px -1px rgba(0, 0, 0, .15);
+  --shadowHover:  0 8px 8px -1px rgba(0, 0, 0, .15);
+}
+*{
+  font-family: 'Noto Sans Arabic', sans-serif;
 }
 body {
   background: #f2f2f2;
   color: #333;
-  font-family: 'Noto Sans Arabic', sans-serif;
 }
 hr{
   opacity: .15;
@@ -46,12 +51,17 @@ footer {
   border-top: 1px solid #eaeaea;
 }
 
+.khatmat{
+  margin-top: 1rem;
+  text-align: right;
+}
 
-
+/*buttons*/
 button{
   padding: .3rem .7rem;
   border: none;
   font-weight: 700;
+  cursor: pointer;
   box-shadow: 0 6px 8px -1px rgba(0, 0, 0, .15);
   transition: color .2s ease-in-out,box-shadow .2s ease-in-out,background-color .2s ease-in-out,opacity .2s ease-in-out;
 }
@@ -67,7 +77,46 @@ button.primary{
 }
 
 
-.khatmat{
-  margin-top: 1rem;
-  text-align: right;
+
+/*modal*/
+.modal{
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, .35);
+}
+
+.modal .modalWindow{
+  width: 50%;
+  margin: auto;
+  background-color: var(--accentColor);
+  padding: 1rem .5rem;
+  box-shadow: var(--shadowHover);
+}
+
+.modalWindow .header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modalWindow .header .title{
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.modalWindow .body{
+  margin: 1rem 0;
+}
+
+@media screen and (max-width: 860px) {
+  .modal .modalWindow{
+    width: 95%;
+  }
 }

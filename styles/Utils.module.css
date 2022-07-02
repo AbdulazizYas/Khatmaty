@@ -1,0 +1,18 @@
+
+/*Cross*/
+.line1,.line2{
+  width: 2px;
+  height: 20px;
+  border-radius: 16px;
+  background-color: #846c45;
+  position: absolute;
+  top: -10px;
+  left: 0;
+}
+
+.line1{
+  transform: rotate(45deg);
+}
+.line2{
+  transform: rotate(-45deg);
+}
