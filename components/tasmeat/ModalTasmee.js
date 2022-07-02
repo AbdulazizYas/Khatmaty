@@ -1,4 +1,5 @@
 import { Cross } from "../utils";
+import ModalBody from "./ModalBody";
 
 const ModalTasmee = ({ isShown, setIsShown }) => {
   return (
@@ -28,7 +29,9 @@ const ModalTasmee = ({ isShown, setIsShown }) => {
                 borderRadius: "50px",
               }}
             />
-            <div className="body">bruh</div>
+            <div className="body">
+              <ModalBody />
+            </div>
 
             <hr
               style={{
