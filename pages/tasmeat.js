@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ModalTasmee from "../components/tasmeat/modalTasmee";
+import ModalTasmee from "../components/tasmeat/ModalTasmee";
 
 const Tasmeat = () => {
   const [modalIsShown, setModalIsShown] = useState(false);
