@@ -1,9 +1,9 @@
-import Counter from "./Counter";
+import StopWatch from "./StopWatch";
 
 const ModalBody = () => {
   return (
     <>
-      <Counter />
+      <StopWatch />
     </>
   );
 };

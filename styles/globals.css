@@ -120,3 +120,9 @@ button.primary{
     width: 95%;
   }
 }
+
+.clock{
+  font-size: 4em;
+  font-weight: 900;
+  color: var(--primaryColor);
+}
