@@ -1,4 +1,4 @@
-import { Cross } from "../utils";
+import { Cross } from "../Utils";
 import ModalBody from "./ModalBody";
 
 const ModalTasmee = ({ isShown, setIsShown }) => {
