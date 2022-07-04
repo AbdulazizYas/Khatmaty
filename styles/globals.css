@@ -126,3 +126,20 @@ button.primary{
   font-weight: 900;
   color: var(--primaryColor);
 }
+
+.mistakes-counter .counters > div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: .4rem 0;
+}
+.mistakes-counter .counters > div input{
+  border: none;
+  background-color: var(--primaryColor);
+  color: white;
+  width: 12.5%;
+  box-shadow: var(--shadow);
+}
+.mistakes-counter .counters > div input:focus{
+  outline: none;
+}
