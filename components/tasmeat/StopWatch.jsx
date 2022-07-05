@@ -24,11 +24,11 @@ const StopWatch = () => {
   const handleStart = () => {
     if (counterIsStart) {
       setCounterIsStart(false);
-      setTime(0);
       return;
     }
 
     setCounterIsStart(true);
+    setTime(0);
   };
 
   return (
