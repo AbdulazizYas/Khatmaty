@@ -16,3 +16,45 @@
 .line2{
   transform: rotate(-45deg);
 }
+
+
+/*Counter*/
+.inputWrapper{
+  display: flex;
+    justify-content: flex-end;
+    width: 18%;
+}
+
+.btnsWrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+.btn{
+  
+  color: white;
+  background-color: var(--primaryColor);
+}
+
+.counter{
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  border: none;
+  text-align: center;
+  display: inline-block;
+  width: 80%;
+  box-shadow: var(--shadow);
+  font-weight: bold;
+  font-size: 1em;
+}
+.counter:focus{
+  outline: none;
+}
+
+.counter::-webkit-inner-spin-button,
+.counter::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}

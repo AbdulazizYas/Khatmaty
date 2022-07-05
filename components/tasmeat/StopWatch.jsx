@@ -35,7 +35,8 @@ const StopWatch = () => {
     <>
       <div className="clock">
         {formatTime(Math.floor(time / 3600))}:
-        {formatTime(Math.floor(time / 60))}:{formatTime(Math.floor(time % 60))}
+        {formatTime(Math.floor((time / 60) % 60))}:
+        {formatTime(Math.floor(time % 60))}
       </div>
       <div className="clock-tools">
         <button className="secondary" onClick={handleStart}>
