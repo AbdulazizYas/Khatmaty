@@ -22,7 +22,7 @@
 .inputWrapper{
   display: flex;
     justify-content: flex-end;
-    width: 18%;
+    width: 18vmax;
 }
 
 .btnsWrapper{
