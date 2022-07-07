@@ -1,12 +1,15 @@
 import "../styles/globals.css";
 
 import Layout from "../components/Layout";
+import { TasmeatProvider } from "../contexts/Tasmeat";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <TasmeatProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </TasmeatProvider>
   );
 }
 

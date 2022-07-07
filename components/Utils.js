@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 import styles from "../styles/Utils.module.css";
 
 export const Cross = () => {
@@ -10,11 +10,12 @@ export const Cross = () => {
   );
 };
 
-export const Counter = ({ id, ref }) => {
+export const Counter = forwardRef(({ id }, ref) => {
   const [value, setValue] = useState(0);
   return (
     <div className={styles.inputWrapper}>
       <button
+        type="button"
         onClick={() => setValue((prev) => prev + 1)}
         className={`${styles.btn}`}
       >
@@ -28,9 +29,11 @@ export const Counter = ({ id, ref }) => {
         id={id}
         type="number"
         ref={ref}
-        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        value={value || 0}
       />
       <button
+        type="button"
         onClick={() => setValue((prev) => Math.max(0, prev - 1))}
         className={`${styles.btn}`}
       >
@@ -38,4 +41,4 @@ export const Counter = ({ id, ref }) => {
       </button>
     </div>
   );
-};
+});

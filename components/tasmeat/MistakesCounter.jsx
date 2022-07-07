@@ -1,11 +1,8 @@
-import { useRef } from "react";
+import { forwardRef, useRef } from "react";
 import { Counter } from "../Utils";
 
-const MistakesCounter = () => {
-  const jumpRef = useRef();
-  const vowelsRef = useRef();
-  const wordsRef = useRef();
-  const uncompleteRef = useRef();
+const MistakesCounter = forwardRef((props, ref) => {
+  const { jumpRef, vowelsRef, wordsRef, uncompleteRef } = ref.current;
 
   return (
     <div className="mistakes-counter">
@@ -33,6 +30,6 @@ const MistakesCounter = () => {
       </div>
     </div>
   );
-};
+});
 
 export default MistakesCounter;

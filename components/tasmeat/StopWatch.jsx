@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { formatTime } from "../../utils";
 
-const StopWatch = () => {
+const StopWatch = ({ timeRef }) => {
   const [counterIsStart, setCounterIsStart] = useState(false);
   const [time, setTime] = useState(0);
 
@@ -12,6 +12,7 @@ const StopWatch = () => {
       interval = setInterval(counter, 1000);
     } else {
       clearInterval(interval);
+      timeRef.current = time;
     }
 
     return () => clearInterval(interval);
@@ -39,7 +40,7 @@ const StopWatch = () => {
         {formatTime(Math.floor(time % 60))}
       </div>
       <div className="clock-tools">
-        <button className="secondary" onClick={handleStart}>
+        <button className="secondary" type="button" onClick={handleStart}>
           {counterIsStart ? "إيقاف" : "بدء"}
         </button>
       </div>

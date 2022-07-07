@@ -1,6 +1,5 @@
 import { useState } from "react";
 import ModalTasmee from "../components/tasmeat/ModalTasmee";
-import { TasmeatProvider } from "../contexts/Tasmeat";
 
 const Tasmeat = () => {
   const [modalIsShown, setModalIsShown] = useState(false);
@@ -10,21 +9,19 @@ const Tasmeat = () => {
   };
 
   return (
-    <TasmeatProvider>
+    <div>
       <div>
-        <div>
-          <button className="primary" onClick={() => handleShowModal()}>
-            أضف ختمة +
-          </button>
+        <button className="primary" onClick={() => handleShowModal()}>
+          أضف ختمة +
+        </button>
 
-          <ModalTasmee isShown={modalIsShown} setIsShown={setModalIsShown} />
-        </div>
-        <div className="khatmat">
-          <h2>ختماتي:</h2>
-          <hr />
-        </div>
+        <ModalTasmee isShown={modalIsShown} setIsShown={setModalIsShown} />
       </div>
-    </TasmeatProvider>
+      <div className="khatmat">
+        <h2>ختماتي:</h2>
+        <hr />
+      </div>
+    </div>
   );
 };
 

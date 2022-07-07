@@ -1,7 +1,34 @@
 import { Cross } from "../Utils";
-import ModalBody from "./ModalBody";
+import { useEffect, useRef, useState } from "react";
+import { useTasmeat } from "../../contexts/Tasmeat";
+import StopWatch from "./StopWatch";
+import MistakesCounter from "./MistakesCounter";
 
 const ModalTasmee = ({ isShown, setIsShown }) => {
+  const jumpRef = useRef();
+  const vowelsRef = useRef();
+  const wordsRef = useRef();
+  const uncompleteRef = useRef();
+
+  const timeRef = useRef();
+
+  const allRefs = useRef({ jumpRef, vowelsRef, wordsRef, uncompleteRef });
+
+  const { khatmat, addKhatmah } = useTasmeat();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    addKhatmah({
+      time: timeRef.current,
+      jumps: jumpRef.current.value,
+      words: wordsRef.current.value,
+      vowels: vowelsRef.current.value,
+      uncomplete: uncompleteRef.current.value,
+    });
+
+    setIsShown(false);
+  };
   return (
     <>
       {isShown && (
@@ -29,23 +56,30 @@ const ModalTasmee = ({ isShown, setIsShown }) => {
                 borderRadius: "50px",
               }}
             />
-            <div className="body">
-              <ModalBody />
-            </div>
+            <form onSubmit={handleSubmit}>
+              <div className="body">
+                <StopWatch timeRef={timeRef} />
+                <MistakesCounter ref={allRefs} />
+              </div>
 
-            <hr
-              style={{
-                margin: 0,
-                marginBottom: "1rem",
-                opacity: 0.25,
-                borderRadius: "50px",
-              }}
-            />
-            <div className="footer">
-              <button className="primary" style={{ width: "80%" }}>
-                إضافة
-              </button>
-            </div>
+              <hr
+                style={{
+                  margin: 0,
+                  marginBottom: "1rem",
+                  opacity: 0.25,
+                  borderRadius: "50px",
+                }}
+              />
+              <div className="footer">
+                <button
+                  type="submit"
+                  className="primary"
+                  style={{ width: "80%" }}
+                >
+                  إضافة
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       )}

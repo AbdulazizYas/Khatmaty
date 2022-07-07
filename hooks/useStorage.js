@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 
 export default function useStorage(key, value) {
   const [val, setVal] = useState(() => {
-    const json = localStorage.getItem(key);
-
-    if (json) return JSON.parse(json);
+    if (typeof window !== "undefined") {
+      const json = localStorage.getItem(key);
+      if (json) return JSON.parse(json);
+    }
 
     return typeof value === "function" ? val() : value;
   });
