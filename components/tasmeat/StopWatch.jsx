@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { formatTime } from "../../utils";
 
-const StopWatch = ({ timeRef }) => {
+const StopWatch = ({ timeRef, setDisabled }) => {
   const [counterIsStart, setCounterIsStart] = useState(false);
   const [time, setTime] = useState(0);
 
@@ -25,6 +25,7 @@ const StopWatch = ({ timeRef }) => {
   const handleStart = () => {
     if (counterIsStart) {
       setCounterIsStart(false);
+      setDisabled(false);
       return;
     }
 

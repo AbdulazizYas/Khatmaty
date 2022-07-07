@@ -49,6 +49,7 @@
   box-shadow: var(--shadow);
   font-weight: bold;
   font-size: 1em;
+  color: var(--primaryColor);
 }
 .counter:focus{
   outline: none;

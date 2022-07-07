@@ -5,16 +5,22 @@ import StopWatch from "./StopWatch";
 import MistakesCounter from "./MistakesCounter";
 
 const ModalTasmee = ({ isShown, setIsShown }) => {
+  const timeRef = useRef();
+
   const jumpRef = useRef();
   const vowelsRef = useRef();
   const wordsRef = useRef();
   const uncompleteRef = useRef();
 
-  const timeRef = useRef();
+  const mistakesRefs = useRef({ jumpRef, vowelsRef, wordsRef, uncompleteRef });
 
-  const allRefs = useRef({ jumpRef, vowelsRef, wordsRef, uncompleteRef });
+  const descRef = useRef();
 
   const { khatmat, addKhatmah } = useTasmeat();
+
+  //useEffect((_) => console.log(khatmat));
+
+  const [disabled, setDisabled] = useState(true);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,8 +31,10 @@ const ModalTasmee = ({ isShown, setIsShown }) => {
       words: wordsRef.current.value,
       vowels: vowelsRef.current.value,
       uncomplete: uncompleteRef.current.value,
+      description: descRef.current.value,
     });
 
+    setDisabled(true);
     setIsShown(false);
   };
   return (
@@ -58,8 +66,14 @@ const ModalTasmee = ({ isShown, setIsShown }) => {
             />
             <form onSubmit={handleSubmit}>
               <div className="body">
-                <StopWatch timeRef={timeRef} />
-                <MistakesCounter ref={allRefs} />
+                <StopWatch timeRef={timeRef} setDisabled={setDisabled} />
+                <MistakesCounter ref={mistakesRefs} />
+                <input
+                  type="text"
+                  className="description"
+                  placeholder="وصف قصير للختمة.."
+                  ref={descRef}
+                />
               </div>
 
               <hr
@@ -70,13 +84,15 @@ const ModalTasmee = ({ isShown, setIsShown }) => {
                   borderRadius: "50px",
                 }}
               />
+
               <div className="footer">
                 <button
                   type="submit"
                   className="primary"
                   style={{ width: "80%" }}
+                  disabled={disabled}
                 >
-                  إضافة
+                  {disabled ? "ابدأ لتفعيل الاضافة.." : "إضافة"}
                 </button>
               </div>
             </form>

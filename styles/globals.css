@@ -2,13 +2,14 @@
 
 :root{
   --primaryColor: #846c45;
-  --secondaryColor: hsl(37, 31%, 60%);
+  --secondaryColor: #fffbf7;
   --accentColor: hsl(37, 31%, 80%);
   --shadow: 0 6px 8px -1px rgba(0, 0, 0, .15);
   --shadowHover:  0 8px 8px -1px rgba(0, 0, 0, .15);
 }
 *{
   font-family: 'Noto Sans Arabic', sans-serif;
+  box-sizing: border-box;
 }
 body {
   background: #f2f2f2;
@@ -133,13 +134,36 @@ button.primary{
   align-items: center;
   margin: .4rem 0;
 }
-/* .mistakes-counter .counters > div input{
-  border: none;
-  background-color: var(--primaryColor);
-  color: white;
-  width: 12.5%;
-  box-shadow: var(--shadow);
+
+.modalWindow .footer button:disabled,
+.modalWindow .footer button[disabled]{
+  background-color: #888;
+  box-shadow: none;
+  cursor: default;
 }
-.mistakes-counter .counters > div input:focus{
+
+.modalWindow .footer button:disabled:hover,
+.modalWindow .footer button[disabled]:hover{
+  background-color: #888;
+  opacity: 1;
+  box-shadow: none;
+}
+
+.modalWindow .body .description{
+  border: none;
+  display: block;
+  width: 95%;
+  padding: .5rem 10px;
+  margin: 24px auto;
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+  background-color: var(--secondaryColor);
+  color: var(--primaryColor);
+  font-weight: bold;
+  font-size: 1em;
+
+}
+
+.modalWindow .body .description:focus{
   outline: none;
-} */
+}

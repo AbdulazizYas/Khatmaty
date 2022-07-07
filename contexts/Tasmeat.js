@@ -11,7 +11,7 @@ export function useTasmeat() {
 export const TasmeatProvider = ({ children }) => {
   const [khatmat, setKhatmat] = useStorage("khatmat", []);
 
-  function addKhatmah({ time, jumps, vowels, words, uncomplete }) {
+  function addKhatmah({ time, jumps, vowels, words, uncomplete, description }) {
     setKhatmat((prev) => {
       return [
         ...prev,
@@ -22,6 +22,7 @@ export const TasmeatProvider = ({ children }) => {
           vowels,
           words,
           uncomplete,
+          description,
         },
       ];
     });
