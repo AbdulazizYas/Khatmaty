@@ -1,5 +1,5 @@
 import { forwardRef, useRef } from "react";
-import { Counter } from "../Utils";
+import Counter from "./Counter";
 
 const MistakesCounter = forwardRef((props, ref) => {
   const { jumpRef, vowelsRef, wordsRef, uncompleteRef } = ref.current;
