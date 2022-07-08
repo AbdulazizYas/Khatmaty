@@ -37,10 +37,9 @@ const Tasmeat = () => {
 
         <ModalTasmee isShown={modalIsShown} setIsShown={setModalIsShown} />
       </div>
+      <h2>ختماتي:</h2>
+      <hr />
       <div className="khatmat">
-        <h2>ختماتي:</h2>
-        <hr />
-
         {khatmat.length === 0 && (
           <p className="nothing">لا توجد ختمات بعد ..</p>
         )}

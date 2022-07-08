@@ -1,3 +1,3 @@
 export default function Home() {
-  return <div>الصفحة الرئيسية</div>;
+  return <div>الإحصائيات (قريبا)</div>;
 }

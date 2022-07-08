@@ -4,6 +4,7 @@
   --primaryColor: #846c45;
   --secondaryColor: #fffbf7;
   --accentColor: hsl(37, 31%, 80%);
+  --darkPrimaryColor: #6e5a3a;
   --shadow: 0 6px 8px -1px rgba(0, 0, 0, .15);
   --shadowHover:  0 8px 8px -1px rgba(0, 0, 0, .15);
 }
@@ -166,4 +167,39 @@ button.primary{
 
 .modalWindow .body .description:focus{
   outline: none;
+}
+
+.khatmat {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 10px;
+}
+
+.khatmat .khatmah{
+  box-shadow: var(--shadow);
+  background-color: var(--darkPrimaryColor);
+  background: linear-gradient(45deg, var(--primaryColor) 35%, var(--darkPrimaryColor) 34%);
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.khatmat .khatmah h6{
+  background-color: gray;
+  width:fit-content;
+  border-radius: 20px;
+  padding: 0 20px;
+}
+.khatmat .khatmah .mistakes{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.khatmat .khatmah .mistakes span{
+  display: block;
+}
+.khatmat .khatmah .mistakes p{
+  margin: 0;
 }
