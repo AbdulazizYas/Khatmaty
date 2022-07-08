@@ -1,7 +1,7 @@
 import { forwardRef, useState } from "react";
 import styles from "../styles/Utils.module.css";
 
-export const Cross = () => {
+const Cross = () => {
   return (
     <>
       <div className={styles.line1}></div>
@@ -10,7 +10,7 @@ export const Cross = () => {
   );
 };
 
-export const Counter = forwardRef(({ id }, ref) => {
+const Counter = forwardRef(({ id }, ref) => {
   const [value, setValue] = useState(0);
   return (
     <div className={styles.inputWrapper}>
@@ -42,3 +42,8 @@ export const Counter = forwardRef(({ id }, ref) => {
     </div>
   );
 });
+
+module.exports = {
+  Cross,
+  Counter,
+};
