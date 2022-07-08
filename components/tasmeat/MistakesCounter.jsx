@@ -32,4 +32,6 @@ const MistakesCounter = forwardRef((props, ref) => {
   );
 });
 
+MistakesCounter.displayName = "MistakesCounter";
+
 export default MistakesCounter;
